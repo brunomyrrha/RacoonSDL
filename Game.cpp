@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "Physics.h"
 #include <SDL.h>
+#include <iostream>
 
 Game::Game()
 {
@@ -12,14 +13,15 @@ Game::Game()
 		720,
 		&mGameIsRunning
 	);
-	input = new Input(&mGameIsRunning);
+	input = new Input(&mGameIsRunning, &mInputAction);
 	physics = new Physics();
 }
 
 Game::~Game()
 {
-	input->~Input();
-	renderer->~Renderer();
+	delete(input);
+	delete(physics);
+	delete(renderer);	
 	SDL_Quit();
 }
 

@@ -3,5 +3,5 @@
 
 void Physics::Calculate()
 {
-	std::cout << "Engine is running" << std::endl;
+	
 }

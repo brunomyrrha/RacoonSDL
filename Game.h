@@ -1,5 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
+#include "InputAction.h"
+
 class Renderer;
 class Input;
 class Physics;
@@ -13,9 +15,10 @@ public:
 	bool IsRunning() { return mGameIsRunning; };
 private:
 	bool mGameIsRunning = true;
-	Renderer* renderer;
-	Input* input;
-	Physics* physics;
+	InputAction mInputAction = NONE;
+	Renderer* renderer = nullptr;
+	Input* input = nullptr;
+	Physics* physics = nullptr;
 };
 #endif // !GAME_H
 
