@@ -15,7 +15,7 @@ public:
 	bool IsRunning() { return mGameIsRunning; };
 private:
 	bool mGameIsRunning = true;
-	InputAction mInputAction = NONE;
+	InputAction mInputAction = InputAction::NONE;
 	Renderer* renderer = nullptr;
 	Input* input = nullptr;
 	Physics* physics = nullptr;

@@ -28,26 +28,26 @@ void Input::Update()
 			break;
 		}
 	}
-	*mActionHandler = NONE;
+	*mActionHandler = InputAction::NONE;
 }
 
 InputAction Input::MapKeyboardEvents(SDL_Keycode* keysym)
 {
 	switch (*keysym)
 	{
-	case SDLK_LCTRL: return ACTION_A;
-	case SDLK_SPACE: return ACTION_B;
-	case SDLK_UP: return UP;
-	case SDLK_DOWN: return DOWN;
-	case SDLK_LEFT: return LEFT;
-	case SDLK_RIGHT: return RIGHT;
-	default: return NONE;
+	case SDLK_LCTRL: return InputAction::ACTION_A;
+	case SDLK_SPACE: return InputAction::ACTION_B;
+	case SDLK_UP: return InputAction::UP;
+	case SDLK_DOWN: return InputAction::DOWN;
+	case SDLK_LEFT: return InputAction::LEFT;
+	case SDLK_RIGHT: return InputAction::RIGHT;
+	default: return InputAction::NONE;
 	}
 }
 
 void Input::HandleKeyboardState()
 {
 	const Uint8* keyStates = SDL_GetKeyboardState(NULL);
-	if (keyStates[SDL_SCANCODE_LEFT]) *mActionHandler = LEFT;
-	if (keyStates[SDL_SCANCODE_RIGHT]) *mActionHandler = RIGHT;
+	if (keyStates[SDL_SCANCODE_LEFT]) *mActionHandler = InputAction::LEFT;
+	if (keyStates[SDL_SCANCODE_RIGHT]) *mActionHandler = InputAction::RIGHT;
 }

@@ -1,7 +1,7 @@
 #ifndef INPUT_ACTION_H
 #define INPUT_ACTION_H
 
-enum InputAction
+enum class InputAction
 {
 	NONE,
 	UP,
